@@ -1,0 +1,10 @@
+Week 09:
+PM: Momo
+Talk about general layout/format of the web app
+This will serve as a template for various topics that will be implemented
+
+
+Week 10:
+PM: ???
+Implement one of the features mentioned in pivotal tracker
+Also come up with more features in pivotal tracker following the format described in class
