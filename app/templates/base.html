@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+    <title>Flash</title>
+    <!-- CSS  -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="/static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="/static/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    {% block style %}
+    {% endblock %}
+</head>
+
+<body>
+    <header>
+        <div class="navbar-fixed">
+            <nav>
+                <div class="nav-wrapper red">
+                    <a href="/" class="brand-logo center">Flash</a>
+                    <a href="#" data-activates="mobile-menu" class="button-collapse right"><i class="material-icons">menu</i></a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="#!">Register</a></li>
+                        <li><a href="#!">Login</a></li>
+                    </ul>
+                    <ul class="side-nav" id="mobile-menu">
+                        <li><a href="#!">Register</a></li>
+                        <li><a href="#!">Login</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+    {% block content %}
+    <div class="container">
+        <div class="row">
+            <h2>Learn <span style="color:red;">ReactJS</span> in a Flash</h2>
+        </div>
+        <div class="row">
+            <h3>Introduction</h3>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/A71aqufiNtQ" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="row">
+            <h3>Getting Started</h3>
+            <div class="col s4">
+            <pre><code>apt install npm
+npm init
+npm install --save react react-dom</code></pre>
+            </div>
+        </div>
+        <div class="row">
+            <h3>Exercise 1: Hello World!</h3>
+            <div>
+            <pre><code>import React from 'react';
+import ReactDOM from 'react-dom';
+
+ReactDOM.render(
+  &lt;h1&gt;Hello, world!&lt;/h1&gt;,
+  document.getElementById('root')
+);</code></pre>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}
+    </main>
+    <footer class="page-footer red">
+        <div class="footer-copyright">
+            <div class="container">
+                &copy;Flash 2017 | Made with <a class="blue-grey-text text-darken-3" href="http://materializecss.com">Materialize</a>
+            </div>
+        </div>
+    </footer>
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="/static/js/materialize.js"></script>
+    <script src="/static/js/init.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    {% block scripts %}
+    {% endblock %}
+</body>
+
+</html>
