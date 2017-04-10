@@ -3,5 +3,9 @@ from flask import render_template, request, redirect, url_for, session, Blueprin
 core = Blueprint('core', __name__)
 
 @core.route('/')
-def index():
-	return render_template('base.html')
+def home():
+	return render_template('home.html')
+
+@core.route('/lesson/<id>')
+def lesson(id):
+	return render_template('sample_tutorial.html')

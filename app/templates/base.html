@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
     <title>Flash</title>
     <!-- CSS  -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="/static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
     <link href="/static/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
@@ -35,35 +35,6 @@
     </header>
     <main>
     {% block content %}
-    <div class="container">
-        <div class="row">
-            <h2>Learn <span style="color:red;">ReactJS</span> in a Flash</h2>
-        </div>
-        <div class="row">
-            <h3>Introduction</h3>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/A71aqufiNtQ" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="row">
-            <h3>Getting Started</h3>
-            <div class="col s4">
-            <pre><code>apt install npm
-npm init
-npm install --save react react-dom</code></pre>
-            </div>
-        </div>
-        <div class="row">
-            <h3>Exercise 1: Hello World!</h3>
-            <div>
-            <pre><code>import React from 'react';
-import ReactDOM from 'react-dom';
-
-ReactDOM.render(
-  &lt;h1&gt;Hello, world!&lt;/h1&gt;,
-  document.getElementById('root')
-);</code></pre>
-            </div>
-        </div>
-    </div>
 
     {% endblock %}
     </main>
