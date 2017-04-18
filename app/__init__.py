@@ -16,6 +16,10 @@ def create_app():
     #db.app = app
     #app.db = db #set the app's db to db
     #db.create_all() #create tables
+
+    from db import mongo
+
+    mongo.init_app(app)
     
     #from utils import init_utils, init_errors
     from core import core

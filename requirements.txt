@@ -1,9 +1,8 @@
 Flask
-Flask-SQLAlchemy
 Flask-Session
 Flask-Caching
-SQLAlchemy
-sqlalchemy-utils
+Flask-PyMongo
+pymongo
 passlib
 bcrypt
 six
