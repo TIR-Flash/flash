@@ -10,4 +10,5 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14
 
 
 EXPOSE 4000
-CMD sleep 5; mongo db:27017 --eval "db.createUser({ user: 'flash', pwd: 'flash', roles: [ { role: 'userAdminAnyDatabase', db: 'admin' } ] });" &&  python serve.py
+
+CMD sleep 3; mongo db:27017 mongo-init.js; python serve.py

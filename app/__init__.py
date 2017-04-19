@@ -1,26 +1,16 @@
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy_utils import database_exists, create_database
-from sqlalchemy.engine.url import make_url
 from os import urandom
 
 def create_app():
     app = Flask(__name__)
     app.secret_key = urandom(24)
 
-    #from models import db, User, Event, Challenge, WorkingOn, File, Config
-    #from config import Conf
-
-    #app.config.from_object(Conf)
-    #db.init_app(app) #initialize db
-    #db.app = app
-    #app.db = db #set the app's db to db
-    #db.create_all() #create tables
-
+    from config import Conf
     from db import mongo
 
-    mongo.init_app(app)
-    
+    app.config.from_object(Conf) #get configuration from config.py
+    mongo.init_app(app) 
+
     #from utils import init_utils, init_errors
     from core import core
     #from admin import admin
