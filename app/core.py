@@ -22,3 +22,7 @@ def home():
 @core.route('/lesson/<id>')
 def lesson(id):
     return render_template('sample_tutorial.html')
+
+@core.route('/create', methods=['GET','POST'])
+def create():
+    return render_template('create.html')
