@@ -4,15 +4,19 @@
   "description": "",
   "dependencies": {
     "webpack": "latest", 
+    "webpack-dev-server": "latest", 
     "babel-cli": "latest", 
+    "babel-core": "latest", 
+    "babel-loader": "latest", 
     "babel-preset-env": "latest", 
+    "babel-preset-es2015": "latest", 
     "babel-preset-react": "latest",
     "react": "latest", 
     "react-dom": "latest", 
     "react-youtube": "latest"
   },
   "scripts": {
-    "build": "node_modules/webpack"
+    "build": "node_modules/.bin/webpack --config webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -25,6 +29,6 @@
   },
   "homepage": "https://github.com/TIR-Flash/flash#readme",
   "babel": {
-    "presets": ["env", "react"]
+    "presets": ["env", "es2015", "react"]
   }
 }

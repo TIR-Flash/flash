@@ -1,9 +1,18 @@
 var path = require('path');
 
 module.exports = {
-  entry: 'app/static/components.jsx',
+  entry: path.join(__dirname, 'app/static/js/test.jsx'),
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'app/static')
+    path: path.join(__dirname, 'app/static/js')
+  },
+  module: {
+    rules: [
+      {
+        test: /\.jsx$/,
+        exclude: /node_modules/,
+        use: 'babel-loader'
+      }
+    ]
   }
 };

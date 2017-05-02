@@ -1,23 +1,10 @@
-class YTVideo extends React.Component {
-  render() {
-    const opts = {
-      height: '390',
-      width: '640',
-      playerVars: { 
-        autoplay: 1
-      }
-    };
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-    return (
-      <YouTube
-        videoId="2g811Eo7K8U"
-        opts={opts}
-        onReady={this._onReady}
-      />
-    );
-  }
-
-  _onReady(event) {
-    event.target.pauseVideo();
-  }
+class World extends React.Component {
+  render() {
+    return <h1>World</h1>
+  }
 }
+
+ReactDOM.render(<World/>, document.getElementById('video'));

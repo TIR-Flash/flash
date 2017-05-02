@@ -22,7 +22,7 @@
         <div class="row">
             <h3>{{ component['title'] }}</h3>
             <p>{{ component['description'] }}</p>
-            <iframe width="560" height="315" src="{{ component['link'] }}" frameborder="0" allowfullscreen></iframe>
+            <div id="video"></div>
         </div>
         {% elif component['type']=="code" %}
         <div class="row">
@@ -44,4 +44,8 @@
     {% endfor %}
 
     </div>
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/js/bundle.js"></script>
 {% endblock %}
