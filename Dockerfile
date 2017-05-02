@@ -7,9 +7,8 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14
 	apt-get install -y curl build-essential python-dev python-pip mongodb-org-shell
 
 ADD ./ /opt/
-RUN pip install -r requirements.txt
-RUN npm install
+RUN pip install --upgrade cffi && pip install --upgrade -r requirements.txt
 
 EXPOSE 4000
 
-CMD sleep 3; mongo db:27017 mongo-init.js; python serve.py
+CMD sleep 3; npm install; npm run build; mongo db:27017 mongo-init.js; python serve.py
