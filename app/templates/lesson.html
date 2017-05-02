@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <h2>Learn <span style="color:red;">ReactJS</span> in a Flash</h2>
+        </div>
+        <h3>Table of Contents</h3>
+        <div class="collection">
+            {% for component in lesson['components'] %}
+               <a href="#!" class="collection-item">{{ component['title'] }}</a>
+            {% endfor %}
+        </div>
+
+        <h5>30% complete</h5>
+        <div class="progress">
+            <div class="determinate" style="width: 30%"></div>
+        </div>
+
+    {% for component in lesson['components'] %}
+        {% if component['type']=="video" %}
+        <div class="row">
+            <h3>{{ component['title'] }}</h3>
+            <p>{{ component['description'] }}</p>
+            <iframe width="560" height="315" src="{{ component['link'] }}" frameborder="0" allowfullscreen></iframe>
+        </div>
+        {% elif component['type']=="code" %}
+        <div class="row">
+            <h3>{{ component['title'] }}</h3>
+            <p>{{ component['description'] }}</p>
+            <div class="col s12 l4">
+            <pre><code>{{ component['content'] }}</code></pre>
+            </div>
+        </div>
+        {% elif component['type']=="image" %}
+        <div class="row">
+            <h3>{{ component['title'] }}</h3>
+            <p>{{ component['description'] }}</p>
+            <div class="col s12 l4">
+                <img src="{{ component['src'] }}" width="300em">
+            </div>
+        </div>
+        {% endif %}
+    {% endfor %}
+
+    </div>
+{% endblock %}

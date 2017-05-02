@@ -2,9 +2,17 @@
   "name": "flash",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "dependencies": {
+    "webpack": "latest", 
+    "babel-cli": "latest", 
+    "babel-preset-env": "latest", 
+    "babel-preset-react": "latest",
+    "react": "latest", 
+    "react-dom": "latest", 
+    "react-youtube": "latest"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node_modules/webpack"
   },
   "repository": {
     "type": "git",
@@ -15,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/TIR-Flash/flash/issues"
   },
-  "homepage": "https://github.com/TIR-Flash/flash#readme"
+  "homepage": "https://github.com/TIR-Flash/flash#readme",
+  "babel": {
+    "presets": ["env", "react"]
+  }
 }
