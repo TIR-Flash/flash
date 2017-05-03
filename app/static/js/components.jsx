@@ -26,5 +26,6 @@ class YT extends React.Component {
 
 // ReactDOM.render(<YT href="https://www.youtube.com/watch?v=A71aqufiNtQ"/>, document.getElementById('video'));
 $('#video').each(function(){
+  console.log(this);
   ReactDOM.render(<YT href={$(this).attr('link')} />, this);
 });
