@@ -6,7 +6,7 @@ db:
 web:
     build: .
     ports:
-        - "4000:4000"
+        - "8000:4000"
     volumes:
         - ./:/opt/
     links:

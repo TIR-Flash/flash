@@ -11322,53 +11322,25 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var videoIdA = 'XxVg_s8xAms';
-var videoIdB = '-DX3vJiqxm4';
+var YT = function (_React$Component) {
+  _inherits(YT, _React$Component);
 
-var Example = function (_React$Component) {
-  _inherits(Example, _React$Component);
+  function YT(props) {
+    _classCallCheck(this, YT);
 
-  function Example(props) {
-    _classCallCheck(this, Example);
-
-    var _this = _possibleConstructorReturn(this, (Example.__proto__ || Object.getPrototypeOf(Example)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (YT.__proto__ || Object.getPrototypeOf(YT)).call(this, props));
 
     _this.state = {
-      videoId: videoIdA,
-      player: null
+      videoId: props.href.split("?")[1].split("v=")[1].split("&")[0]
     };
-
     _this.onReady = _this.onReady.bind(_this);
-    _this.onChangeVideo = _this.onChangeVideo.bind(_this);
-    _this.onPlayVideo = _this.onPlayVideo.bind(_this);
-    _this.onPauseVideo = _this.onPauseVideo.bind(_this);
     return _this;
   }
 
-  _createClass(Example, [{
+  _createClass(YT, [{
     key: 'onReady',
     value: function onReady(event) {
-      console.log('YouTube Player object for videoId: "' + this.state.videoId + '" has been saved to state.'); // eslint-disable-line
-      this.setState({
-        player: event.target
-      });
-    }
-  }, {
-    key: 'onPlayVideo',
-    value: function onPlayVideo() {
-      this.state.player.playVideo();
-    }
-  }, {
-    key: 'onPauseVideo',
-    value: function onPauseVideo() {
-      this.state.player.pauseVideo();
-    }
-  }, {
-    key: 'onChangeVideo',
-    value: function onChangeVideo() {
-      this.setState({
-        videoId: this.state.videoId === videoIdA ? videoIdB : videoIdA
-      });
+      // console.log(`YouTube Player object for videoId: "${this.state.videoId}" has been saved to state.`);
     }
   }, {
     key: 'render',
@@ -11376,30 +11348,20 @@ var Example = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         null,
-        _react2.default.createElement(_reactYoutube2.default, { videoId: this.state.videoId, onReady: this.onReady }),
-        _react2.default.createElement(
-          'button',
-          { onClick: this.onPlayVideo },
-          'Play'
-        ),
-        _react2.default.createElement(
-          'button',
-          { onClick: this.onPauseVideo },
-          'Pause'
-        ),
-        _react2.default.createElement(
-          'button',
-          { onClick: this.onChangeVideo },
-          'Change Video'
-        )
+        _react2.default.createElement(_reactYoutube2.default, { videoId: this.state.videoId, onReady: this.onReady })
       );
     }
   }]);
 
-  return Example;
+  return YT;
 }(_react2.default.Component);
 
-_reactDom2.default.render(_react2.default.createElement(Example, null), document.getElementById('video'));
+// ReactDOM.render(<YT href="https://www.youtube.com/watch?v=A71aqufiNtQ"/>, document.getElementById('video'));
+
+
+$('#video').each(function () {
+  _reactDom2.default.render(_react2.default.createElement(YT, { href: $(this).attr('link') }), this);
+});
 
 /***/ }),
 /* 138 */

@@ -33,6 +33,12 @@ def test_create():
 		    "link": "https://www.youtube.com/watch?v=A71aqufiNtQ"
 		},
 		{
+		    "title": "Another One",
+		    "type": "video",
+		    "description": "Watch another video:",
+		    "link": "https://www.youtube.com/watch?v=uQZMaG1eO74"
+		},
+		{
 		    "title": "Getting Started",
 		    "type": "code",
 		    "description": "First, you'll need to install the dependencies.",
@@ -61,9 +67,10 @@ ReactDOM.render(
 def home():
     return render_template('home.html')
 
-@core.route('/lesson/<id>')
-def lesson(id):
-    return render_template('sample_tutorial.html')
+@core.route('/lesson/<topic>')
+def lesson(topic):
+    l = mongo.db.lessons.find_one_or_404({"name":topic})
+    return render_template('lesson.html', lesson=l)
 
 @core.route('/create', methods=['GET','POST'])
 def create():
