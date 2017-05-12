@@ -33,12 +33,6 @@ def test_create():
 		    "link": "https://www.youtube.com/watch?v=A71aqufiNtQ"
 		},
 		{
-		    "title": "Another One",
-		    "type": "video",
-		    "description": "Watch another video:",
-		    "link": "https://www.youtube.com/watch?v=uQZMaG1eO74"
-		},
-		{
 		    "title": "Getting Started",
 		    "type": "code",
 		    "description": "First, you'll need to install the dependencies.",
@@ -65,6 +59,44 @@ ReactDOM.render(
 
 @core.route('/')
 def home():
+    l = {
+	"name": "React.js",
+	"components": [
+		{
+		    "title": "What is React?",
+		    "type": "image",
+		    "description": "React is a javascript framework for creating user interfaces.",
+		    "src": "https://facebook.github.io/react/img/logo.svg"
+		},
+		{
+		    "title": "Introduction",
+		    "type": "video",
+		    "description": "Watch this video:",
+		    "link": "https://www.youtube.com/watch?v=A71aqufiNtQ"
+		},
+		{
+		    "title": "Getting Started",
+		    "type": "code",
+		    "description": "First, you'll need to install the dependencies.",
+		    "content": '''apt install npm
+npm init
+npm install --save react react-dom'''
+		},
+		{
+		    "title": "Exercise 1: Hello World!",
+		    "type": "code",
+		    "description": "Try this out",
+		    "content": '''import React from 'react';
+import ReactDOM from 'react-dom';
+
+ReactDOM.render(
+  &lt;h1&gt;Hello, world!&lt;/h1&gt;,
+  document.getElementById('root')
+);'''
+		}
+	    ]
+	}
+    lid = mongo.db.lessons.insert_one(l).inserted_id
     return render_template('home.html')
 
 @core.route('/lesson/<topic>')
